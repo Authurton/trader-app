@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="row">
         <app-stock v-for="currency in currencies" :key="currency.id" :currency="currency"></app-stock>
     </div>
 </template>

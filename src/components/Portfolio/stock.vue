@@ -16,7 +16,7 @@
         placeholder="Lot Size"
         v-model="LotSize"
         :class='{danger: insufficientFunds}'></p>
-   <button class="btn btn-primary" 
+   <button class="btn btn-danger" 
     @click='sellCurrency' 
     :disabled="insufficientFunds || LotSize<0.1"
    >{{insufficientFunds ? 'Insufficient Funds' : 'Sell'}}</button>

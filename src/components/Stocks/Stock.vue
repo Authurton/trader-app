@@ -1,47 +1,30 @@
-<!--<template>
-    <div class="col-sm-6 col-md-4">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-tittle">
-                    NAME
-                    <small>(Price:PRICE)</small>
-                </h3>
-            </div>
-            <div class="panel-body">
-                <div class="pull-left">
-                    <input type="number" class="form-control" placeholder="Loss/Profit">
-                </div>
-                <div class="pull-right">
-                    <button class="btn btn-primary">Buy</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</template>-->
-<template>
-<div class="row">
 
-<div class="card">
-  <div class="card-header">
-    <h5 class="card-tittle">
+<template>
+<div >
+ <b-col md="12">
+  <b-row align-h="end">
+  <b-card-body>
+  <b-card-group deck>
+
+    <b-card footer="Let's trade">
+    <div class="card-title"><h5 class="card-tittle">
       {{currency.name}}
       <h6 class="float-right"><small>{{currency.currentPrice}}</small></h6>
-    </h5>
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">
-      <input type="number" 
+    </h5></div>
+    <input type="number" 
         class="form-control" 
         placeholder="Lot Size"
         v-model="LotSize"
-        :class='{danger: insufficientFunds}'></p>
-   <button class="btn btn-primary" 
-   @click='buyCurrency' :disabled="insufficientFunds || LotSize<=0"
-   >{{insufficientFunds ? 'Insufficient Funds' : 'Buy'}}</button>
-   
-  </div>
-</div>
+        :class='{danger: insufficientFunds}'>
+        <br>
+    <b-button href="#" variant="primary" @click='buyCurrency' :disabled="insufficientFunds || LotSize<=0"> 
+      {{insufficientFunds ? 'Insufficient Funds' : 'Buy'}}
+    </b-button>
+    </b-card>
+  </b-card-group>
+  </b-card-body>
+  </b-row>
+ </b-col> 
 </div>
 </template>
 

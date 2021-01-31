@@ -24,6 +24,11 @@ const mutations = {
             state.currencies.splice(state.currencies.indexOf(record), 1);
         }
         state.funds += currentPrice * LotSize;
+    },
+    "SET_PORTFOLIO"(state, portfolio){
+        state.funds = portfolio.funds;
+        state.currencies = portfolio.currencyPortfolio ? portfolio.currencyPortfolio : [];
+
     }
 };
 
